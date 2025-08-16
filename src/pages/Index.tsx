@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import EnquiryForm from "@/components/EnquiryForm";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
@@ -42,6 +43,25 @@ const Index = () => {
                 performance and reliability.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enquiry Form Section */}
+      <section className="py-20 bg-gradient-to-br from-background to-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Get in Touch
+            </h3>
+            <p className="text-lg text-muted-foreground">
+              Ready to explore drone solutions for your business? 
+              Contact us to discuss your requirements.
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <EnquiryForm />
           </div>
         </div>
       </section>
