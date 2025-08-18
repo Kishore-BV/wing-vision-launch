@@ -13,7 +13,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Banner Section */}
       <section 
-        className="h-screen bg-cover bg-center bg-no-repeat"
+        className="h-[50vh] md:h-screen bg-cover bg-center bg-no-repeat p-4 md:p-0"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
         {/* Empty banner - no content needed */}
