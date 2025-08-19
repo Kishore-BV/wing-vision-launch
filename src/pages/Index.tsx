@@ -13,10 +13,10 @@ const Index = () => {
       {/* Banner Section */}
       <section className="relative h-[50vh] md:h-screen overflow-hidden">
         <iframe 
-          src="https://my.spline.design/drone-7k04A1eWZsF2RwZjhVEul3Sj/" 
-          frameBorder="0" 
-          width="100%" 
-          height="100%"
+          src='https://my.spline.design/drone-7k04A1eWZsF2RwZjhVEul3Sj/' 
+          frameBorder='0' 
+          width='100%' 
+          height='100%'
           className="absolute inset-0 w-full h-full"
         ></iframe>
       </section>
