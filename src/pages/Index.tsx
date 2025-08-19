@@ -19,6 +19,8 @@ const Index = () => {
           height="100%"
           className="absolute inset-0 w-full h-full"
         ></iframe>
+        {/* Hide the "Built with Spline" button */}
+        <div className="absolute bottom-0 right-0 w-40 h-16 bg-background z-10"></div>
       </section>
 
       {/* About Section */}
