@@ -18,7 +18,7 @@ const EnquiryForm = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -30,21 +30,50 @@ const EnquiryForm = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Thank you for your enquiry!",
-      description: "We'll get back to you within 24 hours."
-    });
+    try {
+      // Send data to n8n webhook
+      const response = await fetch('https://n8n-pgct.onrender.com/webhook-test/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          timestamp: new Date().toISOString()
+        }),
+      });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: ""
-    });
+      if (response.ok) {
+        toast({
+          title: "Thank you for your enquiry!",
+          description: "We'll get back to you within 24 hours."
+        });
+
+        // Reset form on success
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Failed to submit enquiry');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error submitting enquiry",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
