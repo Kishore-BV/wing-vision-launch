@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import EnquiryForm from "@/components/EnquiryForm";
-import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,11 +11,14 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Banner Section */}
-      <section 
-        className="h-[50vh] md:h-screen bg-cover bg-center bg-no-repeat p-4 md:p-0"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      >
-        {/* Empty banner - no content needed */}
+      <section className="relative h-[50vh] md:h-screen overflow-hidden">
+        <iframe 
+          src="https://my.spline.design/drone-7k04A1eWZsF2RwZjhVEul3Sj/" 
+          frameBorder="0" 
+          width="100%" 
+          height="100%"
+          className="absolute inset-0 w-full h-full"
+        ></iframe>
       </section>
 
       {/* About Section */}
