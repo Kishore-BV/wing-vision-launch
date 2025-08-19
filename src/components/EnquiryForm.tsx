@@ -32,7 +32,7 @@ const EnquiryForm = () => {
 
     try {
       // Send data to n8n webhook
-      const response = await fetch('https://n8n-pgct.onrender.com/webhook-test/contact', {
+      const response = await fetch('https://n8n-pgct.onrender.com/webhook/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
